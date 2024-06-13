@@ -22,7 +22,7 @@ class OrderTest extends TestCase
 
         // Mock User
         $user = User::factory()->create([
-            'loyalty_points' => 300
+            'loyalty_points' => 200
         ]);
 
         // Create OrderProcessor instance
@@ -35,7 +35,7 @@ class OrderTest extends TestCase
         // Assuming delivery cost is 10 (10 * 1) and loyalty points worth 1 zł (100 / 100)
         $this->assertDatabaseHas('orders', [
             'type' => 'delivery',
-            'total_price' => 10 + 20 - 1, // delivery_cost + price - loyalty_points
+            'total_price' => 10 + 20 - 2, // delivery_cost + price - loyalty_points
         ]);
     }
 
