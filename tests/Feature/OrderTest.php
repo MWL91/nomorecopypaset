@@ -22,7 +22,7 @@ class OrderTest extends TestCase
 
         // Mock User
         $user = User::factory()->create([
-            'loyalty_points' => 300
+            'loyalty_points' => 200
         ]);
 
         // Create OrderProcessor instance
